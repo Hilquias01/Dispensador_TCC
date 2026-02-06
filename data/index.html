@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dispensador TCC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="logo">💊</div>
+      <div>
+        <div class="title">Dispensador de Medicamentos</div>
+        <div class="sub">Painel Web • ESP8266</div>
+      </div>
+    </div>
+    <button id="btnRefresh" class="btn ghost">Atualizar</button>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <div class="card">
+        <h2>📶 Status</h2>
+        <div class="kv">
+          <div><span>Wi-Fi</span><b id="wifi">...</b></div>
+          <div><span>SSID</span><b id="ssid">...</b></div>
+          <div><span>IP</span><b id="ip">...</b></div>
+          <div><span>RSSI</span><b id="rssi">...</b></div>
+        </div>
+        <div class="hint">Dica: se não conectar, reinicie e entre no Wi-Fi <b>Dispensador-TCC-xxxx</b>.</div>
+      </div>
+
+      <div class="card">
+        <h2>💬 WhatsApp (CallMeBot)</h2>
+
+        <label>Telefone (com DDI + DDD)</label>
+        <input id="phone" placeholder="5568999999999" />
+
+        <label>API Key</label>
+        <input id="key" type="password" placeholder="sua apikey" />
+
+        <div class="row">
+          <button id="btnSave" class="btn">Salvar</button>
+          <button id="btnTest" class="btn ghost">Testar</button>
+        </div>
+
+        <div id="msg" class="msg"></div>
+
+        <div class="hint">
+          Exemplo: <b>55</b> (Brasil) + <b>68</b> (Acre) + número.
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>📌 Parte 1 do TCC: Wi-Fi + Painel + Config + Teste WhatsApp</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
