@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Dispensador TCC</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="alarmBanner" class="alarm-banner hidden">
+    🚨 ALARME TOCANDO! 🚨
+    <button class="btn stop-btn" id="btnStopAlarm">PARAR AGORA</button>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="title">Dispensador TCC</div>
+      <div class="subtitle" id="clockDisplay">--:--</div>
+    </div>
+    <div class="chip" id="chipOnline">
+      <span class="dot" id="dotOnline"></span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="tabs">
+      <button class="tab active" data-tab="meds">💊 Medicamentos</button>
+      <button class="tab" data-tab="config">⚙️ Configurações</button>
+    </nav>
+
+    <section class="panel" id="tab-meds">
+      <div class="card">
+        <div class="card-head">
+          <h2>Novo Agendamento</h2>
+        </div>
+        <div class="form">
+          <label>Nome do Remédio</label>
+          <input id="mName" placeholder="Ex: Dipirona" maxlength="20">
+          
+          <div class="grid2">
+            <div>
+              <label>Dose</label>
+              <input id="mDose" placeholder="Ex: 1 cp">
+            </div>
+          </div>
+
+          <label>Horários (Toque no + para adicionar mais)</label>
+          <div id="timeList">
+            <input type="time" class="time-input" required>
+          </div>
+          <button class="btn outline small" id="btnAddTime" style="margin-top:5px">+ Adicionar outro horário</button>
+
+          <label>Onde está guardado?</label>
+          <select id="mBox" class="input-select">
+            <option value="1">📦 Compartimento 1</option>
+            <option value="2">📦 Compartimento 2</option>
+            <option value="3">📦 Compartimento 3</option>
+            <option value="4">📦 Compartimento 4</option>
+          </select>
+
+          <label>Dias da Semana</label>
+          <div class="days">
+            <label class="day"><input type="checkbox" id="d0"> Dom</label>
+            <label class="day"><input type="checkbox" id="d1"> Seg</label>
+            <label class="day"><input type="checkbox" id="d2"> Ter</label>
+            <label class="day"><input type="checkbox" id="d3"> Qua</label>
+            <label class="day"><input type="checkbox" id="d4"> Qui</label>
+            <label class="day"><input type="checkbox" id="d5"> Sex</label>
+            <label class="day"><input type="checkbox" id="d6"> Sáb</label>
+          </div>
+
+          <div class="grid2">
+            <div>
+              <label>Aviso Antes (min)</label>
+              <input type="number" id="mBefore" value="5" min="0" max="60">
+            </div>
+          </div>
+
+          <div class="row">
+            <button class="btn" id="btnAddMed">Salvar Agendamento</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h2>Meus Agendamentos</h2>
+          <button class="btn outline small" id="btnReloadMeds">⟳</button>
+        </div>
+        <div id="medList" class="medlist">
+          <div class="small muted">Carregando...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="tab-config">
+      <div class="card">
+        <div class="card-head">
+          <h2>📱 Telegram</h2>
+        </div>
+        <div class="form">
+          <label>Seu Usuário (ex: celetor0)</label>
+          <input id="tgUsers" placeholder="Digite seu usuário aqui...">
+          <div class="row">
+            <button class="btn" id="btnSaveCfg">Salvar Config</button>
+            <button class="btn warn" id="btnTestTg">Testar Envio</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h2>📡 Sistema</h2>
+        </div>
+        <div class="grid">
+          <div class="kv"><div class="k">Wi-Fi</div><div class="v" id="stWifi">...</div></div>
+          <div class="kv"><div class="k">IP</div><div class="v" id="stIp">...</div></div>
+        </div>
+        <br>
+        <a class="btn outline" href="/wifi">📶 Configurar Wi-Fi</a>
+        <div class="small muted" style="margin-top:10px; border-top:1px solid #333; padding-top:10px;">
+          <a href="/upload" style="color:#666">Avançado: Upload</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
