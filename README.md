@@ -1,5 +1,8 @@
 # 💊 DOSE CERTA - Organizador de Remédios Inteligente
-
+Repositório utilizado por Hilquias, Milena e Angelo para elaboração do TCC - Dose Certa. Seguem
+- Pasta um com uma Imagem 1 com os equipamentos utilizados (hardware)
+* Pasta com os STL utilizados para impressão 3d
+* Pasta com os Códigos.
 O **Dose Certa** é um dispensador de medicamentos inteligente baseado em Internet das Coisas (IoT). Desenvolvido com o microcontrolador ESP8266 (NodeMCU), o projeto visa auxiliar pacientes no controle rigoroso de seus tratamentos médicos, garantindo que o medicamento correto seja tomado na hora certa.
 
 O sistema possui 4 compartimentos físicos identificados por LEDs, alertas sonoros e visuais (Display LCD), além de uma interface web responsiva para gerenciamento e integração de notificações em tempo real via Telegram.
